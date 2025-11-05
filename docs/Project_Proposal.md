@@ -11,9 +11,13 @@
 # AI Hardware Project Proposal Template
 
 ## 1. Project Title
-Name of the Team
+Name of the Team: group-group
 
 List of students in the team
+1. Claire Chiang
+2. JoJo Jiang
+3. Sonia Aung
+4. Allison Lampe
 
 Provide a clear and concise title for your project. 
 
