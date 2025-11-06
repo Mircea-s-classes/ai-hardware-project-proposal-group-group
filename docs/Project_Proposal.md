@@ -35,6 +35,9 @@ Model Footprint: The final quantized (INT8) TensorFlow Lite model must have a RA
 Predictive accuracy: The model must achieve a predictive accuracy of at least 70% on a test dataset.
 Latency: Making one prediction on the Arduino hardware must complete in less than 1000 milliseconds.
 
+1. Accuracy - We target about 70% accuracy because of the simplicity predicting weather from a few parameters. This value may be updated once we analyze preliminary data.
+2. Scalability - We will have access to barometric, temperature, and humidity data. We will try every combination of these to understand how the system responds to multiple features and more data.
+3. Memory efficiency – We will try to keep the model under 50 kB of RAM and 200 kB of flash, using less than 20% of the memory on the Nano 33 BLE Sense.
 
 ## 5. Methodology
 Describe your planned approach: hardware setup, software tools, model design, performance metrics, and validation strategy.
