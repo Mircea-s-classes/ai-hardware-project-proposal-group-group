@@ -15,17 +15,15 @@ Name of the Team: group-group
 
 List of students in the team
 1. Claire Chiang
-2. JoJo Jiang
+2. Zourong Jiang
 3. Sonia Aung
 4. Allison Lampe
 
-Provide a clear and concise title for your project. 
+Provide a clear and concise title for your project: Temperature Forecasting with TinyML 
 
 ## 2. Platform Selection
-Select one platform category and justify your choice.
+TinyML
 
-**Undergraduates:** Edge-AI, TinyML, or Neuromorphic platforms  
-**Graduates:** open-source AI accelerators (Ztachip, VTA, Gemmini, VeriGOOD-ML, NVDLA) or any of the above 
 
 ## 3. Problem Definition
 Describe the AI or hardware design problem you aim to address and its relevance to AI hardware (e.g., efficiency, latency, scalability).
