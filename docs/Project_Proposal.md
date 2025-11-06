@@ -34,7 +34,6 @@ We aim to design a low-power, always-on system that can operate entirely offline
 3. Memory efficiency – We will try to keep the model under 50 kB of RAM and 200 kB of flash, using less than 20% of the memory on the Nano 33 BLE Sense.
 
 ## 5. Methodology
-Describe your planned approach: hardware setup, software tools, model design, performance metrics, and validation strategy.
 Hardware Setup:
 Arduino Nano 33 BLE Sense for sensing temperature, humidity, and barometric pressure.
 
@@ -77,7 +76,7 @@ Provide expected milestones:
 | Dec. 18 | Final presentation | Report, demo, GitHub archive |
 
 ## 9. Resources Required
-List special hardware, datasets, or compute access needed.
+Arduino Nano 33 BLE Sense, weather data from meteostat.net.
 
 ## 10. References
 Include relevant papers, repositories, and documentation.
