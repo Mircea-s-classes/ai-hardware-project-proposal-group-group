@@ -31,6 +31,11 @@ We aim to design a low-power, always-on system that can operate entirely offline
 ## 4. Technical Objectives
 List 3–5 measurable objectives with quantitative targets when possible.
 
+Model Footprint: The final quantized (INT8) TensorFlow Lite model must have a RAM footprint (Tensor Arena) of less than 100 KB, to successfully run on the Arduino Nano's 256KB of RAM.
+Predictive accuracy: The model must achieve a predictive accuracy of at least 70% on a test dataset.
+Latency: Making one prediction on the Arduino hardware must complete in less than 1000 milliseconds.
+
+
 ## 5. Methodology
 Describe your planned approach: hardware setup, software tools, model design, performance metrics, and validation strategy.
 
