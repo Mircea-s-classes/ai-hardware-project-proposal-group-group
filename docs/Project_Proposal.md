@@ -35,6 +35,23 @@ We aim to design a low-power, always-on system that can operate entirely offline
 
 ## 5. Methodology
 Describe your planned approach: hardware setup, software tools, model design, performance metrics, and validation strategy.
+Hardware Setup:
+Arduino Nano 33 BLE Sense for sensing temperature, humidity, and barometric pressure.
+
+Software Tools:
+Arduino IDE for sensor interfacing.
+Python / TensorFlow for offline model training and quantization.
+TensorFlow Lite Micro to deploy the model on the Nano.
+
+Model Design:
+Train on historical weather data from meteostat.net to predict temperature trend (up/down) based on humidity, barometric, and current temperature data.
+
+Performance Metrics:
+Accuracy on local test data (~70% target).
+Memory usage (<50 kB RAM, <200 kB flash).
+
+Validation Strategy:
+Test on a week of local sensor data collected from the Nano.
 
 ## 6. Expected Deliverables
 List tangible outputs: working demo, GitHub repository, documentation, presentation slides, and final report.
