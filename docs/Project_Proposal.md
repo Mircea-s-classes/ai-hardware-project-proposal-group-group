@@ -22,7 +22,7 @@ List of students in the team
 Provide a clear and concise title for your project: Temperature Forecasting with TinyML 
 
 ## 2. Platform Selection
-TinyML
+We will use TinyML because weather forcasting can already done adequately on the cloud, but there could be utility in being able to estimate future temperature just with a device. TinyML allows us to, in this case, get real time weather predictions in any location.
 
 
 ## 3. Problem Definition
