@@ -61,7 +61,7 @@ List each member’s main role.
 | Name | Role | Responsibilities |
 |------|------|------------------|
 | [Student A] | Team Lead | Coordination, documentation |
-| [Student B] | Hardware | Setup, integration |
+| Zourong Jiang | Hardware | Setup, integration |
 | [Student C] | Software | Model training, inference |
 | Allison Lampe | Evaluation | Data Organization, Testing |
 
