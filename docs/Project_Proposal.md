@@ -58,9 +58,9 @@ List tangible outputs: working demo, GitHub repository, documentation, presentat
 ## 7. Team Responsibilities
 List each member’s main role.
 
-| Name | Role | Responsibilities |
+| Name | Role | Responsibilities | #Haven't decided yet
 |------|------|------------------|
-| [Student A] | Team Lead | Coordination, documentation |
+| Sonia Aung | Team Lead | Coordination, documentation |
 | Zourong Jiang | Hardware | Setup, integration |
 | [Student C] | Software | Model training, inference |
 | Allison Lampe | Evaluation | Data Organization, Testing |
