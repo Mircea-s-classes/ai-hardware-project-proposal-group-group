@@ -62,7 +62,7 @@ List each member’s main role.
 |------|------|------------------|
 | Sonia Aung | Team Lead | Coordination, documentation |
 | Zourong Jiang | Hardware | Setup, integration |
-| [Student C] | Software | Model training, inference |
+| Claire Chiang | Software | Model training, inference |
 | Allison Lampe | Evaluation | Data Organization, Testing |
 
 ## 8. Timeline and Milestones
