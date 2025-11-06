@@ -28,6 +28,8 @@ TinyML
 ## 3. Problem Definition
 Describe the AI or hardware design problem you aim to address and its relevance to AI hardware (e.g., efficiency, latency, scalability).
 
+We aim to design an low-power, always-on voice interaction system that can operate entirely offline, without reliance on cloud-based speech recognition. Traditional voice assistants require continuous network connectivity, consume significant energy. Our system instead uses on-device keyword spotting and sensor-based temperature trend prediction on a constrained microcontroller platform.
+
 ## 4. Technical Objectives
 List 3–5 measurable objectives with quantitative targets when possible.
 
