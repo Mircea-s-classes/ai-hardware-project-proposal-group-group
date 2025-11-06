@@ -63,7 +63,7 @@ List each member’s main role.
 | [Student A] | Team Lead | Coordination, documentation |
 | [Student B] | Hardware | Setup, integration |
 | [Student C] | Software | Model training, inference |
-| [Student D] | Evaluation | Testing, benchmarking |
+| Allison Lampe | Evaluation | Data Organization, Testing |
 
 ## 8. Timeline and Milestones
 Provide expected milestones:
