@@ -1,2 +1,2 @@
 # Data
-Include datasets or references to external data sources.
+We used historical weather data from meteostat.com
