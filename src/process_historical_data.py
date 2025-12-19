@@ -10,7 +10,8 @@ FEATURE_COLS = ["temp", "rhum", "pres"]
 TARGET_COL = "temp"
 
 # Your uploaded file (change path if needed)
-ARDUINO_CSV = "Next Hour Temperature Live Data - 12_17 1pm-6_15pm.csv"
+ARDUINO_CSV_day1 = "Next Hour Temperature Live Data - 12_17 1pm-6_15pm.csv"
+ARDUINO_CSV_day2 = "Next Hour Temperature Live Data - 12_16 3_45-8pm.csv"
 
 # Meteostat location: Charlottesville
 LAT, LON = 38.03, -78.48
@@ -117,7 +118,10 @@ def main():
 
     # Load datasets
     df_web = load_web_data()
-    df_ard = load_arduino_data(ARDUINO_CSV)
+    df_ard = pd.concat([
+        load_arduino_data(ARDUINO_CSV_day1),
+        load_arduino_data(ARDUINO_CSV_day2),
+    ], axis=0)
 
     # Create supervised sets
     X_web, y_web = make_supervised_multivariate(df_web, FEATURE_COLS, TARGET_COL, WINDOW_STEPS, HORIZON_STEPS)
