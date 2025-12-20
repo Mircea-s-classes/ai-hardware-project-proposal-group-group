@@ -10,8 +10,7 @@ FEATURE_COLS = ["temp", "rhum", "pres"]
 TARGET_COL = "temp"
 
 # Your uploaded file (change path if needed)
-ARDUINO_CSV_day1 = "Next Hour Temperature Live Data - 12_17 1pm-6_15pm.csv"
-ARDUINO_CSV_day2 = "Next Hour Temperature Live Data - 12_16 3_45-8pm.csv"
+ARDUINO_CSV = "Next Hour Temperature Live Data - 12_17 1pm-6_15pm.csv"
 
 # Meteostat location: Charlottesville
 LAT, LON = 38.03, -78.48
@@ -21,19 +20,26 @@ WEB_END   = datetime(2024, 12, 1)
 # ---------- 2) Helpers ----------
 def make_supervised_multivariate(df, feature_cols, target_col, window_steps, horizon_steps):
     """
-    df: time-indexed dataframe, regularly sampled
-    X shape: (N, window_steps, F)
-    y shape: (N,)
+    X: past window_steps points (history)
+    y: mean temperature over the NEXT horizon_steps points
+       i.e., average over (t .. t+60min), not the value at t+60min
     """
     feat = df[feature_cols].values.astype("float32")
     tgt  = df[target_col].values.astype("float32")
 
     X, y = [], []
     T = len(df)
+
+    # need: history window + future horizon fully available
     for i in range(T - window_steps - horizon_steps + 1):
-        X.append(feat[i:i+window_steps, :])
-        y.append(tgt[i+window_steps+horizon_steps-1])
+        X.append(feat[i:i + window_steps, :])
+
+        start = i + window_steps
+        end   = start + horizon_steps
+        y.append(tgt[start:end].mean())   # <-- key change: future mean
+
     return np.array(X, dtype=np.float32), np.array(y, dtype=np.float32)
+
 
 def zscore_fit(X, y, eps=1e-6):
     x_mean = X.mean(axis=(0, 1), keepdims=True)
@@ -118,14 +124,15 @@ def main():
 
     # Load datasets
     df_web = load_web_data()
-    df_ard = pd.concat([
-        load_arduino_data(ARDUINO_CSV_day1),
-        load_arduino_data(ARDUINO_CSV_day2),
-    ], axis=0)
+    df_ard = load_arduino_data(ARDUINO_CSV)
 
     # Create supervised sets
     X_web, y_web = make_supervised_multivariate(df_web, FEATURE_COLS, TARGET_COL, WINDOW_STEPS, HORIZON_STEPS)
     X_ard, y_ard = make_supervised_multivariate(df_ard, FEATURE_COLS, TARGET_COL, WINDOW_STEPS, HORIZON_STEPS)
+
+    print("Arduino check:")
+    print("y_ard[0] (next-hour mean temp):", float(y_ard[0]))
+    print("first hour temp mean should be close to:", float(df_ard["temp"].iloc[WINDOW_STEPS:WINDOW_STEPS+HORIZON_STEPS].mean()))
 
     print("Web samples:", X_web.shape, y_web.shape)
     print("Arduino samples:", X_ard.shape, y_ard.shape)
